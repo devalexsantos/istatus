@@ -1,4 +1,4 @@
-import { Home, Workflow } from 'lucide-react'
+import { Clipboard, Home, LayoutList, Settings, Workflow } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 
 export function Sidebar() {
@@ -6,13 +6,15 @@ export function Sidebar() {
 
   const menu = [
     { icon: Home, label: 'Dashboard', path: '/' },
-    { icon: Workflow, label: 'Workflows', path: '/workflow' },
+    { icon: Clipboard, label: 'Tasks', path: '/tasks' },
+    { icon: LayoutList, label: 'Categories', path: '/categories' },
+    { icon: Workflow, label: 'Status', path: '/status' },
   ]
 
   return (
     <div className="w-full h-full min-h-screen max-w-[287px] p-8 flex flex-col gap-6 border-r">
       <span className="font-bold italic text-xl w-full px-4">iStatus</span>
-      <nav className="flex flex-col gap-2">
+      <nav className="flex flex-1 flex-col gap-2">
         {menu.map(({ icon: Icon, label, path }, index) => (
           <a
             key={index}
@@ -23,6 +25,9 @@ export function Sidebar() {
           </a>
         ))}
       </nav>
+      <span className="flex gap-2 items-center px-4">
+        <Settings size="22" /> Settings
+      </span>
     </div>
   )
 }
