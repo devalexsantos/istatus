@@ -19,13 +19,13 @@ export function Sidebar() {
           <a
             key={index}
             href={path}
-            className={`flex gap-2 items-center w-full py-2 px-4 rounded-md hover:bg-zinc-50 ${pathname === path && 'text-primary font-semibold bg-zinc-50'}`}
+            className={`flex gap-2 items-center w-full py-2 px-4 rounded-md text-sm hover:bg-zinc-50 ${pathname === path && 'text-primary font-semibold bg-zinc-50'}`}
           >
-            <Icon size="22" /> {label}
+            <Icon size="18" strokeWidth={1.8} /> {label}
           </a>
         ))}
       </nav>
-      <span className="flex gap-2 items-center px-4">
+      <span className="flex gap-2 items-center px-4 text-sm font-semibold">
         <Settings size="22" /> Settings
       </span>
     </div>
