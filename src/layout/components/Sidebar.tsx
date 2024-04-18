@@ -6,9 +6,9 @@ export function Sidebar() {
   const { pathname } = useLocation()
 
   return (
-    <div className="w-full h-full min-h-screen max-w-[287px] p-8 hidden md:flex flex-col gap-6 border-r">
+    <div className="w-full min-h-screen max-w-[287px] p-8 hidden md:flex flex-col gap-6 border-r">
       <span className="font-bold italic text-xl w-full px-4">iStatus</span>
-      <nav className="flex flex-1 flex-col gap-2">
+      <nav className="flex flex-1 h-full flex-col gap-2">
         {menu.map(({ icon: Icon, label, path }, index) => (
           <a
             key={index}
