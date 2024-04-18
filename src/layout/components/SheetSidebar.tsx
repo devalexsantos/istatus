@@ -1,24 +1,11 @@
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import {
-  Home,
-  LayoutList,
-  Menu,
-  Settings,
-  Workflow,
-  Clipboard,
-} from 'lucide-react'
+import { menu } from '@/data/menu'
+import { Menu, Settings } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 
 export function SheetSidebar() {
   const { pathname } = useLocation()
-
-  const menu = [
-    { icon: Home, label: 'Dashboard', path: '/' },
-    { icon: Clipboard, label: 'Tasks', path: '/tasks' },
-    { icon: LayoutList, label: 'Categories', path: '/categories' },
-    { icon: Workflow, label: 'Status', path: '/status' },
-  ]
 
   return (
     <Sheet>

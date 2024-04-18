@@ -1,15 +1,9 @@
-import { Clipboard, Home, LayoutList, Settings, Workflow } from 'lucide-react'
+import { menu } from '@/data/menu'
+import { Settings } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 
 export function Sidebar() {
   const { pathname } = useLocation()
-
-  const menu = [
-    { icon: Home, label: 'Dashboard', path: '/' },
-    { icon: Clipboard, label: 'Tasks', path: '/tasks' },
-    { icon: LayoutList, label: 'Categories', path: '/categories' },
-    { icon: Workflow, label: 'Status', path: '/status' },
-  ]
 
   return (
     <div className="w-full h-full min-h-screen max-w-[287px] p-8 hidden md:flex flex-col gap-6 border-r">
