@@ -2,6 +2,15 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Paginate } from '@/layout/components/Paginate'
 import { PlusCircle, Search } from 'lucide-react'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
 export function Status() {
   return (
@@ -22,20 +31,28 @@ export function Status() {
       <span className="mt-8 mb-2 text-xs text-muted-foreground">
         Resultado (26):
       </span>
-      <div className="flex items-center gap-3 flex-wrap">
-        {Array.from({ length: 50 }).map((_, index) => (
-          <div
-            key={index}
-            className="w-full max-w-[250px] flex items-center justify-between border px-4 py-2"
-          >
-            <span className="flex items-center gap-1 text-sm">
-              <div className="w-[10px] h-[10px] rounded-full bg-yellow-500" />
-              Em andamento
-            </span>
-            <span className="text-xs text-muted-foreground">12</span>
-          </div>
-        ))}
-      </div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Name</TableHead>
+            <TableHead>Category</TableHead>
+            <TableHead>Items</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {Array.from({ length: 10 }).map((_, index) => (
+            <TableRow key={index}>
+              <TableCell className="font-medium">
+                Em preparação adquirida
+              </TableCell>
+              <TableCell className="text-xs">Login Informática</TableCell>
+              <TableCell className="text-xs text-muted-foreground">
+                03
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
       <div className="flex justify-start mt-8">
         <Paginate />
       </div>
