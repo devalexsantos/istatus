@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Paginate } from '@/layout/components/Paginate'
-import { PlusCircle, Search } from 'lucide-react'
+import { Search } from 'lucide-react'
 import {
   Table,
   TableBody,
@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { NewStatusModal } from '@/layout/components/NewStatausModal'
 
 export function Status() {
   return (
@@ -22,10 +23,7 @@ export function Status() {
           <Search size={18} />
           Buscar
         </Button>
-        <Button size="sm" className="flex items-center gap-2">
-          <PlusCircle size={18} />
-          Adicionar
-        </Button>
+        <NewStatusModal />
       </div>
       <span className="mt-8 mb-2 text-xs text-muted-foreground">
         Resultado (26):
