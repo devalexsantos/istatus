@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { SheetSidebar } from './SheetSidebar'
 import { menu } from '@/data/menu'
 import { useLocation } from 'react-router-dom'
+import { ThemeToggle } from './ThemeToggle'
 
 export function HeaderBar() {
   const { pathname } = useLocation()
@@ -12,7 +13,10 @@ export function HeaderBar() {
         <SheetSidebar />
         <span>{menuData[0].label}</span>
       </div>
-      <Button>Logout</Button>
+      <div className="flex items-center gap-3">
+        <ThemeToggle />
+        <Button>Logout</Button>
+      </div>
     </header>
   )
 }
