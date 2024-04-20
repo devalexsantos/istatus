@@ -25,6 +25,9 @@ export function Status() {
         </Button>
         <NewStatusModal />
       </div>
+      <div className="md:hidden flex w-full justify-end">
+        <NewStatusModal />
+      </div>
       <span className="mt-8 mb-2 text-xs text-muted-foreground">
         Resultado (26):
       </span>
