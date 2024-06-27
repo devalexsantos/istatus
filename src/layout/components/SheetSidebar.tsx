@@ -18,15 +18,23 @@ export function SheetSidebar() {
         <div className="w-full h-full min-h-screen flex flex-col gap-6">
           <span className="font-bold italic text-xl w-full px-4">iStatus</span>
           <nav className="flex flex-1 flex-col gap-2">
-            {menu.map(({ icon: Icon, label, path }, index) => (
-              <a
-                key={index}
-                href={path}
-                className={`flex gap-2 items-center w-full py-2 px-4 rounded-md text-sm hover:bg-secondary ${pathname === path && 'text-primary font-semibold bg-secondary'}`}
-              >
-                <Icon size="18" strokeWidth={1.8} /> {label}
-              </a>
-            ))}
+            {menu.map(
+              ({ icon: Icon, label, path, showOnMenu }, index) =>
+                showOnMenu && (
+                  <a
+                    key={index}
+                    href={path}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-md ${
+                      path === pathname
+                        ? 'bg-gray-200 text-gray-900'
+                        : 'text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {Icon && <Icon size="22" />}
+                    <span>{label}</span>
+                  </a>
+                ),
+            )}
           </nav>
           <span className="flex gap-2 items-center px-4 text-sm font-semibold">
             <Settings size="22" /> Settings
